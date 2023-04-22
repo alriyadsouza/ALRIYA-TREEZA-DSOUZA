@@ -1,6 +1,7 @@
 :root {
-    --color-primary: #0a1e4d;
-    --color-secondary: #cc5eb0;
+    --color-primary: rgb(245, 231, 220);
+    --color-secondary: rgb(34, 85, 117);
+    -o-animation: alternate-reverse;
   }
   
   *,
@@ -53,7 +54,7 @@
     width:"30";
     height:"40";
     border-radius: 50%;
-    border: 10px solid #12a489fb;
+    border: 10px solid rgb(91, 88, 88);
   }
   
   .btn {

@@ -1,27 +1,38 @@
 ---
 import logos from '../../images/framework-logos.png'
+import Card from '../components/Card.astro'
 import logosSmall from '../../images/framework-logos-small.png'
 import rocket from '../images/WhatsApp Image 2023-04-22 at 17.17.22.jpg'
+import img from '../images/github-fill.svg'
+import img1 from '../images/discord-fill.svg'
+import img2 from '../images/twitter-fill.svg'
+import img3 from '../images/instagram-line.svg'
 export interface Props {
   heading?: string;
   text?: string;
   showExtra?: boolean;
 }
 
-const { heading = "ALRIYA TREEZA D SOUZA", text="An intense and immersive apocalyptic escape room where players must race against the clock to escape a world on the brink of destruction.", showExtra = false } = Astro.props as Props;
+const { heading = "ALRIYA TREEZA D SOUZA", text="Computer Science Student. Web Developer", showExtra = false } = Astro.props as Props;
 ---
 
 <section class="showcase">
   <div class="showcase-text">
-    <img src={rocket} width="300" height="300" alt=""/>
+    <img src={rocket} width="250" height="250" alt=""/>
     <br>
     <h1>{heading}</h1>
-    <br>
     <p>
       {text}
     </p>
   </div>
   
+  <img src={img} width="60" height="60" src="https://github.com/alriyadsouza"/>
+  &nbsp;
+  <img src={img1} width="60" height="60" alt="https://github.com/alriyadsouza"/>
+  &nbsp;
+  <img src={img2} width="60" height="60" alt="https://github.com/alriyadsouza"/>
+  &nbsp;
+  <img src={img3} width="60" height="60" alt="https://github.com/alriyadsouza"/>
   
 
   {showExtra && <>
@@ -31,7 +42,9 @@ const { heading = "ALRIYA TREEZA D SOUZA", text="An intense and immersive apocal
   </div>
 
   <p class="showcase-demo">
-    <small></small>
+    <small>
+      <a href="https://github.com/alriyadsouza">Alriya Dsouza</a>
+      </small>
   </p>
   </>}
 </section>
@@ -42,6 +55,7 @@ const { heading = "ALRIYA TREEZA D SOUZA", text="An intense and immersive apocal
   background-color: var(--color-secondary);
   background-image: linear-gradient(to bottom, var(--color-primary), rgba(43, 86, 188, 0));
   padding: 30px;
+  text-align: center;
 }
 
 .showcase-blog {
@@ -50,14 +64,14 @@ const { heading = "ALRIYA TREEZA D SOUZA", text="An intense and immersive apocal
 
 .showcase-text {
   max-width: 1000px;
-  color: #fff;
+  color: black;
   text-align: center;
   margin: 50px auto;
 }
 
 .showcase h1 {
   font-size: 50px;
-  color: #fff;
+  color: rgb(114, 185, 229);
   margin-bottom: 20px;
 }
 
@@ -76,8 +90,8 @@ const { heading = "ALRIYA TREEZA D SOUZA", text="An intense and immersive apocal
 }
 
 .showcase-demo {
-  color: #fff;
-  text-align: center;
+  color: rgb(114, 185, 229);
+  text-align: left;
   font-weight: 300;
 }
 </style>

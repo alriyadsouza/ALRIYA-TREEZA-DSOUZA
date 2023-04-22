@@ -1,0 +1,83 @@
+---
+import logos from '../../images/framework-logos.png'
+import logosSmall from '../../images/framework-logos-small.png'
+import rocket from '../images/WhatsApp Image 2023-04-22 at 17.17.22.jpg'
+export interface Props {
+  heading?: string;
+  text?: string;
+  showExtra?: boolean;
+}
+
+const { heading = "ALRIYA TREEZA D SOUZA", text="An intense and immersive apocalyptic escape room where players must race against the clock to escape a world on the brink of destruction.", showExtra = false } = Astro.props as Props;
+---
+
+<section class="showcase">
+  <div class="showcase-text">
+    <img src={rocket} width="300" height="300" alt=""/>
+    <br>
+    <h1>{heading}</h1>
+    <br>
+    <p>
+      {text}
+    </p>
+  </div>
+  
+  
+
+  {showExtra && <>
+    <div class="showcase-img">
+    <img class="logos" src={logos} alt="" />
+    <img class="logos-small" src={logosSmall} alt="" />
+  </div>
+
+  <p class="showcase-demo">
+    <small></small>
+  </p>
+  </>}
+</section>
+
+<style>
+  .showcase {
+  height: auto;
+  background-color: var(--color-secondary);
+  background-image: linear-gradient(to bottom, var(--color-primary), rgba(43, 86, 188, 0));
+  padding: 30px;
+}
+
+.showcase-blog {
+  min-height: 300px;
+}
+
+.showcase-text {
+  max-width: 1000px;
+  color: #fff;
+  text-align: center;
+  margin: 50px auto;
+}
+
+.showcase h1 {
+  font-size: 50px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.showcase p {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.showcase-img {
+  text-align: center;
+}
+
+.showcase-img img {
+  border-radius: 10px;
+  margin: auto;
+}
+
+.showcase-demo {
+  color: #fff;
+  text-align: center;
+  font-weight: 300;
+}
+</style>

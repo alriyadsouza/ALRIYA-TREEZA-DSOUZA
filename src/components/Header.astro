@@ -1,3 +1,6 @@
+---
+import Toggle from './ThemeChange.astro';
+---
 <header class="header">
   <div class="container">
     <div class="logo">
@@ -11,6 +14,7 @@
         <li><a href="/rulebook">Projects</a></li>
         <li><a href="/registration">GiHub</a></li>
         <li><a href="/registration">Resume</a></li>
+        <Toggle />
       </ul>
     </nav>
   </div>
@@ -20,6 +24,7 @@
   .header {
   height: 70px;
   background: var(--color-primary);
+  font-size: large;
 }
 
 .header .container {
@@ -52,4 +57,27 @@
 .header a{
   color: black;
 }
+
+[data-theme="light"] {
+    --color-bg: #f2f2f2;
+    --color-text: #444444;
+    --bold-text: #222;
+    --nav-text: #000000;
+    --code: #f2f2f2;
+    --block-quote-border: #999;
+    --block-quote-text: #222;
+    --slider-bg: #dddddd;
+    --slider-bg-before: #fff;
+    --slider-input-bg: #8758ff;
+  }
+  
+  [data-theme="dark"] {
+    --color-bg: #000;
+    --color-text: #dddddd;
+    --bold-text: #eeeeee;
+    --nav-text: #dddddd;
+    --code: #f2f2f2;
+    --block-quote-border: #8e32dc;
+    --block-quote-text: #dddddd;
+  }
 </style>

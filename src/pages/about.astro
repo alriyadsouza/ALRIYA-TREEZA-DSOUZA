@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro'
+
+import logos from '../images/deploy-logos.png';
+import logosSmall from '../images/deploy-logos-small.png';
+---
+
+<Layout title="About">
+  <section class="page-content">
+    <div class="container">
+      <h2>About</h2>
+      <p>
+        The Last Stand is an intense and immersive escape room experience that puts players in a world on the brink of destruction. The game begins with an ominous message that the world is ending, and players have only one hour to escape before the final cataclysmic event. The game is set in a post-apocalyptic scenario where  players are stranded in a bunker and must solve puzzles to unlock the doors and escape the room before the clock runs out.
+The escape room is designed to be challenging and thought-provoking, with a range of clues, riddles, and puzzles that players must solve to progress. The game is filled with interactive props and special effects that add to the overall immersive experience, such as flickering lights, simulated earthquakes, and sound effects that create a sense of urgency and tension.
+
+      </p>
+
+      <p>
+        The storyline of The Last Stand is also well-crafted and engaging, with a focus on survival and resourcefulness. Players must use their critical thinking skills to gather clues, decipher codes, and unlock hidden doors. Along the way, they will encounter a range of obstacles, from booby-trapped doors to blocked passageways, that require creative problem-solving to overcome.
+
+      </p>
+
+      <Card dark={true}>
+        <p>
+            But the clock is always ticking, and players must act quickly if they hope to escape before disaster strikes. With every passing moment, the tension mounts, as the players work feverishly to unravel the clues and crack the codes that will lead them to freedom.
+            Featuring stunning visual and audio effects, The Last Stand is a fully immersive escape room experience that transports players to a world unlike any other. Whether you're a seasoned escape room veteran or a first-time player, The Last Stand is a must-try adventure that is sure to leave you on the edge of your seat from start to finish. So gather your friends, put your skills to the test, and see if you have what it takes to survive The Last Stand.
+            
+            
+        </p>
+    </Card>
+   
+    </div>
+  </section>
+</Layout>
+<style>
+  [data-theme="light"] {
+  --color-bg: #f2f2f2;
+  --color-text: #444444;
+  --bold-text: #222;
+  --nav-text: #000000;
+  --code: #f2f2f2;
+  --block-quote-border: #999;
+  --block-quote-text: #222;
+  --slider-bg: #dddddd;
+  --slider-bg-before: #fff;
+  --slider-input-bg: #8758ff;
+}
+
+[data-theme="dark"] {
+  --color-bg: #000;
+  --color-text: #dddddd;
+  --bold-text: #eeeeee;
+  --nav-text: #dddddd;
+  --code: #f2f2f2;
+  --block-quote-border: #8e32dc;
+  --block-quote-text: #dddddd;
+}
+</style>

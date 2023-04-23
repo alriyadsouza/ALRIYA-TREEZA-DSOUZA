@@ -7,26 +7,31 @@ import img from '../images/github-fill.svg'
 import img1 from '../images/discord-fill.svg'
 import img2 from '../images/twitter-fill.svg'
 import img3 from '../images/instagram-line.svg'
+import img4 from '../images/linkedin-box-fill.svg'
 export interface Props {
   heading?: string;
   text?: string;
   showExtra?: boolean;
 }
 
-const { heading = "ALRIYA TREEZA D SOUZA", text="Computer Science Student. Web Developer", showExtra = false } = Astro.props as Props;
+const { heading = "ALRIYA TREEZA D SOUZA", text="Computer Science Student| Web Developer", showExtra = false } = Astro.props as Props;
 ---
 
 <section class="showcase">
   <div class="showcase-text">
     <img src={rocket} width="250" height="250" alt=""/>
     <br>
-    <h1>{heading}</h1>
+    <div class="slide-right">
+      <h1>{heading}</h1>
+    </div> 
     <p>
       {text}
     </p>
   </div>
   
   <a href="https://github.com/alriyadsouza"><img src={img} width="60" height="60"></a>
+  &nbsp;
+  <a href="https://www.linkedin.com/in/alriya-treeza-d-souza-792498224/"><img src={img4} width="60" height="60"></a>
   &nbsp;
   <a href="https://discord.gg/3yqdDTXda"><img src={img1} width="60" height="60"></a>
   &nbsp;
@@ -67,12 +72,30 @@ const { heading = "ALRIYA TREEZA D SOUZA", text="Computer Science Student. Web D
   color: black;
   text-align: center;
   margin: 50px auto;
+  animation-fill-mode: forwards;
 }
 
-.showcase h1 {
+.slide-right
+{
+  width:100%;
+  overflow:hidden;
+}
+.slide-right h1 
+{
   font-size: 50px;
   color: rgb(146, 0, 159);
   margin-bottom: 20px;
+  animation: 1s slide-right;
+}
+
+@keyframes slide-right{
+  from {
+    margin-left: -100%;
+  }
+
+  to {
+    margin-left: 0%;
+  }
 }
 
 .showcase p {
@@ -94,4 +117,28 @@ const { heading = "ALRIYA TREEZA D SOUZA", text="Computer Science Student. Web D
   text-align: left;
   font-weight: 300;
 }
+
+[data-theme="light"] {
+  --color-bg: #f2f2f2;
+  --color-text: #444444;
+  --bold-text: #222;
+  --nav-text: #000000;
+  --code: #f2f2f2;
+  --block-quote-border: #999;
+  --block-quote-text: #222;
+  --slider-bg: #dddddd;
+  --slider-bg-before: #fff;
+  --slider-input-bg: #8758ff;
+}
+
+[data-theme="dark"] {
+  --color-bg: #000;
+  --color-text: #dddddd;
+  --bold-text: #eeeeee;
+  --nav-text: #dddddd;
+  --code: #f2f2f2;
+  --block-quote-border: #8e32dc;
+  --block-quote-text: #dddddd;
+}
 </style>
+

@@ -17,10 +17,12 @@ const { title = '🍪PORTFOLIO' } = Astro.props as Props;
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <title>{title}</title>
+    <title>🍪PORTFOLIO</title>
   </head>
   <body>
     <Header />
+    <slot />
+
     <script is:inline>
       const theme = (() => {
         if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
@@ -39,6 +41,5 @@ const { title = '🍪PORTFOLIO' } = Astro.props as Props;
       }
       window.localStorage.setItem("theme", theme);
     </script>
-    <slot />
   </body>
 </html>

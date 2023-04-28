@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "astro": "^2.3.0",
-    "astro-icon": "^0.8.0"
+    "astro-icon": "^0.8.0",
+    "astro-lottie": "^0.0.1",
+    "lottie-web": "^5.11.0"
   },
   "devDependencies": {
     "@astrojs/image": "^0.16.6"

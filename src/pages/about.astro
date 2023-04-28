@@ -1,59 +1,133 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro'
+import school from "../images/school-line.png";
+import work from "../images/creative-commons-nd-line.png";
 
-import logos from '../images/deploy-logos.png';
-import logosSmall from '../images/deploy-logos-small.png';
+export interface Props {
+  heading?: string;
+  text?: string;
+  showExtra?: boolean;
+}
+
+const { heading = "About Me", text="Computer Science Student| Web Developer", showExtra = false } = Astro.props as Props;
 ---
 
 <Layout title="About">
-  <section class="page-content">
-    <div class="container">
-      <h2>About</h2>
-      <p>
-        The Last Stand is an intense and immersive escape room experience that puts players in a world on the brink of destruction. The game begins with an ominous message that the world is ending, and players have only one hour to escape before the final cataclysmic event. The game is set in a post-apocalyptic scenario where  players are stranded in a bunker and must solve puzzles to unlock the doors and escape the room before the clock runs out.
-The escape room is designed to be challenging and thought-provoking, with a range of clues, riddles, and puzzles that players must solve to progress. The game is filled with interactive props and special effects that add to the overall immersive experience, such as flickering lights, simulated earthquakes, and sound effects that create a sense of urgency and tension.
-
-      </p>
-
-      <p>
-        The storyline of The Last Stand is also well-crafted and engaging, with a focus on survival and resourcefulness. Players must use their critical thinking skills to gather clues, decipher codes, and unlock hidden doors. Along the way, they will encounter a range of obstacles, from booby-trapped doors to blocked passageways, that require creative problem-solving to overcome.
-
-      </p>
-
-      <Card dark={true}>
-        <p>
-            But the clock is always ticking, and players must act quickly if they hope to escape before disaster strikes. With every passing moment, the tension mounts, as the players work feverishly to unravel the clues and crack the codes that will lead them to freedom.
-            Featuring stunning visual and audio effects, The Last Stand is a fully immersive escape room experience that transports players to a world unlike any other. Whether you're a seasoned escape room veteran or a first-time player, The Last Stand is a must-try adventure that is sure to leave you on the edge of your seat from start to finish. So gather your friends, put your skills to the test, and see if you have what it takes to survive The Last Stand.
-            
-            
-        </p>
-    </Card>
-   
+  <section class="showcase1">
+    <div class="showcase-text">
+      <h1>{heading}</h1>
+      <p>{text}</p> 
+      <p>I am a computer science student and web developer based in [your location]. I have a passion for building web applications and have experience with [list your skills or technologies here].</p>
+      {showExtra && (
+        <p>Here's some extra information about me...</p>
+      )}
+        <img src={school} alt="Education Logo" style="padding: 10px;">
+      
+      <h2>My Skills</h2>
+      <ul>
+        <li><img src={work} style="padding: 10px;" > Skill 1</li>
+        <li><img src={work} style="padding: 10px;" > Skill 2</li>
+        <li><img src={work} style="padding: 10px;" > Skill 3</li>
+        <li><img src={work} style="padding: 10px;" > Skill 4</li>
+        <li><img src={work} style="padding: 10px;" > Skill 5</li>
+      </ul>
+  </div>
+    <div class="animation">
+      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+      <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_uEl2RR.json"
+        background="transparent"
+        speed="1"
+        style="width: 600px; height: 600px;"
+        loop
+        autoplay
+      ></lottie-player>
     </div>
   </section>
-</Layout>
+
 <style>
-  [data-theme="light"] {
-  --color-bg: #f2f2f2;
-  --color-text: #444444;
-  --bold-text: #222;
-  --nav-text: #000000;
-  --code: #f2f2f2;
-  --block-quote-border: #999;
-  --block-quote-text: #222;
-  --slider-bg: #dddddd;
-  --slider-bg-before: #fff;
-  --slider-input-bg: #8758ff;
+  .showcase1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    background-color: rgb(7, 37, 158);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='rgb(255,139,139)' fill-opacity='1' d='M0,96L60,122.7C120,149,240,203,360,224C480,245,600,235,720,213.3C840,192,960,160,1080,154.7C1200,149,1320,171,1380,181.3L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 30px;
+    text-align: center;
+    background-position: 0 0;
+    animation: moveBackground 30s linear infinite;
+  }
+
+  @keyframes moveBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
 }
 
-[data-theme="dark"] {
-  --color-bg: #000;
-  --color-text: #dddddd;
-  --bold-text: #eeeeee;
-  --nav-text: #dddddd;
-  --code: #f2f2f2;
-  --block-quote-border: #8e32dc;
-  --block-quote-text: #dddddd;
+  .showcase-text {
+  flex-basis: 40%;
+  max-width: 500px;
+  color: rgb(231, 5, 5);
+  text-align: left;
+  margin: 50px auto;
+  animation-fill-mode: forwards;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  background-color: #000000;
+  font-size: 1.2rem;
+  line-height: 1.5;
 }
-</style>
+
+.showcase-text h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+.showcase-text h2 {
+  font-size: 2.5rem;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.showcase-text p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.showcase-text ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.showcase-text li {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.showcase-text li img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+  .animation {
+    flex-basis: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+  
+  </style>
+</Layout>

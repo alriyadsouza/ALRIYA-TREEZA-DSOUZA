@@ -29,7 +29,8 @@ const title="berrr";
 
 <style>
     .container {
-      max-width: 1800px;
+      max-width: 100%;
+      height: auto;
       margin: 0 auto;
       padding: 30px;
       display: flex;
@@ -57,34 +58,37 @@ const title="berrr";
   
     .hero {
       display: flex;
-      flex-direction: row;
-      justify-content: space-between;
+      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      margin-top: 60px;
-      margin-bottom: 80px;
+      margin-top: 60px auto;
+      margin-bottom: 80px auto;
       color:black;
+      max-width: 800px;
+      text-align: center;
     }
 
     .hero h1 {
-      font-size: 3.5rem;
+      font-size: 2.5rem;
       font-weight: bold;
       margin-bottom: 0px;
       
     }
   
   .hero p {
-    font-size: 24px;
+    font-size: 20px;
     margin-bottom: 40px;
   }
 
   .projects{
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       margin-top: 20px;
       margin-bottom: 80px;
       color:black;
       font-size: 1.2rem;
+      text-align: center;
   }
   </style>

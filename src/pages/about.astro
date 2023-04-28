@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import school from "../images/school-line.png";
 import work from "../images/creative-commons-nd-line.png";
+import { Icon } from 'astro-icon'
+import { Sprite } from 'astro-icon'
 
 export interface Props {
   heading?: string;
@@ -9,29 +11,32 @@ export interface Props {
   showExtra?: boolean;
 }
 
-const { heading = "About Me", text="Computer Science Student| Web Developer", showExtra = false } = Astro.props as Props;
+const { heading = "About Me", showExtra = false } = Astro.props as Props;
 ---
 
 <Layout title="About">
   <section class="showcase1">
     <div class="showcase-text">
-      <h1>{heading}</h1>
-      <p>{text}</p> 
-      <p>I am a computer science student and web developer based in [your location]. I have a passion for building web applications and have experience with [list your skills or technologies here].</p>
+      <h1>{heading}</h1> 
+      <p>Hi there! I'm the Secretary of the Sceptix Club, a group of people who like to explore scientific ideas and thinking. I'm also really into web development and am currently learning some cool new tools like Astro, Svelte, and React.
+        
+        I enjoy participating in hackathons, which are events where people get together to work on creative tech projects. I've been part of some cool ones like HacktoFuture and Hackathon. I'm comfortable coding in Python, Java, C++, and C, so I can tackle all kinds of programming tasks.
+        
+        Overall, I'm a curious and motivated person who's always looking for new challenges. Whether it's organizing events with the Sceptix Club or building websites and apps, I like to push myself and learn new things.</p>
       {showExtra && (
         <p>Here's some extra information about me...</p>
       )}
-        <img src={school} alt="Education Logo" style="padding: 10px;">
-      
-      <h2>My Skills</h2>
+      <h2><img src={school} alt="Education Logo" >Education</h2>
+        <ul style="padding: 13px;">Elementary Schooling<ul style="padding: 15px;">GM Vidhyanikethan Piblic school</ul></ul>
+        <ul style="padding: 13px;">Secondary Schooling<ul style="padding: 15px;">S.M.S English Medium school</ul></ul>
+        <ul style="padding: 13px;">Pre-University Course<ul style="padding: 15px;">Little Rock Indian school</ul></ul>
+        <ul style="padding: 13px;">Bachelor of Engineering<ul style="padding: 15px;">St Joseph Engineering College</ul></ul>
+      <h2><img src={work} > Hobbies</h2>
       <ul>
-        <li><img src={work} style="padding: 10px;" > Skill 1</li>
-        <li><img src={work} style="padding: 10px;" > Skill 2</li>
-        <li><img src={work} style="padding: 10px;" > Skill 3</li>
-        <li><img src={work} style="padding: 10px;" > Skill 4</li>
-        <li><img src={work} style="padding: 10px;" > Skill 5</li>
+        <li style="padding: 12px;">Coding <br> Signing <br>Listening To Music <br> Reading Books</li>
       </ul>
   </div>
+
     <div class="animation">
       <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
       <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_uEl2RR.json"
@@ -41,7 +46,9 @@ const { heading = "About Me", text="Computer Science Student| Web Developer", sh
         loop
         autoplay
       ></lottie-player>
+    
     </div>
+    
   </section>
 
 <style>
@@ -51,7 +58,7 @@ const { heading = "About Me", text="Computer Science Student| Web Developer", sh
     align-items: center;
     justify-content: center;
     height: auto;
-    background-color: rgb(7, 37, 158);
+    background-color: rgb(90, 118, 229);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='rgb(255,139,139)' fill-opacity='1' d='M0,96L60,122.7C120,149,240,203,360,224C480,245,600,235,720,213.3C840,192,960,160,1080,154.7C1200,149,1320,171,1380,181.3L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
     background-size: cover;
     background-repeat: no-repeat;
@@ -72,17 +79,17 @@ const { heading = "About Me", text="Computer Science Student| Web Developer", sh
 }
 
   .showcase-text {
-  flex-basis: 40%;
-  max-width: 500px;
-  color: rgb(231, 5, 5);
-  text-align: left;
-  margin: 50px auto;
+  flex-basis: 90%;
+  max-width: 3000px;
+  color: rgb(0, 0, 0);
+  text-align:justify;
+  margin: 10px auto;
   animation-fill-mode: forwards;
-  padding: 20px;
+  padding: 40px;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  background-color: #000000;
-  font-size: 1.2rem;
+  background-color: #e0baba;
+  font-size: 1.5rem;
   line-height: 1.5;
 }
 
@@ -127,7 +134,5 @@ const { heading = "About Me", text="Computer Science Student| Web Developer", sh
     align-items: center;
     justify-content: center;
     }
-
-  
   </style>
 </Layout>

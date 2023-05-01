@@ -11,81 +11,16 @@
 </script>
 
 
-<header class="header">
-  <div class="container">
-    <div class="logo">
-      <ul>
-        <li><a href="/" class="text-amber-400 dark:text-sky-800" >🍪Alriya</a></li>
-      </ul>
-    </div>
+<header class="flex w-full h-16 justify-between items-center p-4 px-8 fixed
+            text-gray-950 dark:text-neutral-50 bg-white/[0.15]
+            dark:bg-black/[0.15] shadow-sm">
+    <a href="/" class=" mr-auto font-bold text-xl" >🍪&nbsp;Alriya</a>
     <nav>
-      <ul>
+      <ul class="list-none flex gap-4">
         <li><a href="/about">About</a></li>
         <li><a href="/showcase">Projects</a></li>
         <li><a href="https://github.com/alriyadsouza">GitHub</a></li>
         <button on:click={toggleTheme}>Toggle Theme</button>
       </ul>
     </nav>
-  </div>
 </header>
-
-<!-- <style>
-  .header {
-  height: 70px;
-  background: rgb(219, 219, 250);
-  font-size: large;
-}
-
-.header .container {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
-}
-
-
-.header img {
-  height: 35px;
-  vertical-align: middle;
-}
-
-.header nav ul {
-  display: flex;
-}
-
-.header nav ul li {
-  padding: 0 10px;
-}
-
-.header nav ul li a {
-  color: black;
-}
-
-.header a{
-  color: black;
-}
-
-[data-theme="light"] {
-    --color-bg: #f2f2f2;
-    --color-text: #444444;
-    --bold-text: #222;
-    --nav-text: #000000;
-    --code: #f2f2f2;
-    --block-quote-border: #999;
-    --block-quote-text: #222;
-    --slider-bg: #dddddd;
-    --slider-bg-before: #fff;
-    --slider-input-bg: #8758ff;
-  }
-  
-[data-theme="dark"] {
-  --color-bg: #000;
-  --color-text: #dddddd;
-  --bold-text: #eeeeee;
-  --nav-text: #dddddd;
-  --code: #f2f2f2;
-  --block-quote-border: #8e32dc;
-  --block-quote-text: #dddddd;
-}
-</style> -->

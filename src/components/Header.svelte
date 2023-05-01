@@ -1,11 +1,21 @@
----
-import Toggle from './ThemeChange.astro';
----
+<script>
+  function toggleTheme() {
+    const currentTheme = document.documentElement.classList.contains("dark")
+      ? "dark"
+      : "light";
+    const nextTheme = currentTheme === "dark" ? "light" : "dark";
+    document.documentElement.classList.remove(currentTheme);
+    document.documentElement.classList.add(nextTheme);
+    localStorage.setItem("theme", nextTheme);
+  }
+</script>
+
+
 <header class="header">
   <div class="container">
     <div class="logo">
       <ul>
-        <li><a href="/">🍪Alriya</a></li>
+        <li><a href="/" class="text-amber-400 dark:text-sky-800" >🍪Alriya</a></li>
       </ul>
     </div>
     <nav>
@@ -13,13 +23,13 @@ import Toggle from './ThemeChange.astro';
         <li><a href="/about">About</a></li>
         <li><a href="/showcase">Projects</a></li>
         <li><a href="https://github.com/alriyadsouza">GitHub</a></li>
-        <Toggle />
+        <button on:click={toggleTheme}>Toggle Theme</button>
       </ul>
     </nav>
   </div>
 </header>
 
-<style>
+<!-- <style>
   .header {
   height: 70px;
   background: rgb(219, 219, 250);
@@ -69,13 +79,13 @@ import Toggle from './ThemeChange.astro';
     --slider-input-bg: #8758ff;
   }
   
-  [data-theme="dark"] {
-    --color-bg: #000;
-    --color-text: #dddddd;
-    --bold-text: #eeeeee;
-    --nav-text: #dddddd;
-    --code: #f2f2f2;
-    --block-quote-border: #8e32dc;
-    --block-quote-text: #dddddd;
-  }
-</style>
+[data-theme="dark"] {
+  --color-bg: #000;
+  --color-text: #dddddd;
+  --bold-text: #eeeeee;
+  --nav-text: #dddddd;
+  --code: #f2f2f2;
+  --block-quote-border: #8e32dc;
+  --block-quote-text: #dddddd;
+}
+</style> -->

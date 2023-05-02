@@ -19,9 +19,9 @@
     <div class="flex flex-col justify-center pr-12 text-blue-950 dark:text-teal-200">
       <h1 class="text-5xl font-bold" >{props.heading}</h1>
       <p class="text-xl">{props.text}</p>
-      <div class="flex justify-start items-center gap-6 p-2 mt-6">
+      <div class="flex justify-start items-center gap-6 m-2 mt-6 w-fit icons">
         {#each icons as icon}
-          <a href="{icon.link}" class="link">
+        <a href="{icon.link}" class="link" >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="fill-blue-950 dark:fill-teal-200 w-8">
               <path d={icon.path}></path>
             </svg>
@@ -31,3 +31,14 @@
     </div>
   </div>
 </section>
+
+<style>
+  .link svg {
+    opacity: 1;
+    transition: 100ms;
+  }
+
+  .icons:hover svg:not(:hover) {
+    opacity: 0.3;
+  } 
+</style>

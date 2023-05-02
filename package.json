@@ -1,7 +1,7 @@
 {
   "name": "alriya-portfolio",
   "type": "module",
-  "version": "1.8.9-unstable",
+  "version": "2.0.0-public",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",

@@ -16,7 +16,7 @@
     <nav>
       <ul class="list-none flex gap-4">
         <li><a href="/about">About</a></li>
-        <li><a href="/showcase">Projects</a></li>
+        <li><a href="/project">Projects</a></li>
         <li><a href="https://github.com/alriyadsouza">GitHub</a></li>
         <button on:click={toggleTheme}>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">

@@ -12,9 +12,9 @@ export interface Props {
 const { heading = "About Me", showExtra = false } = Astro.props as Props;
 ---
 <Layout title="About Me | Alriya">
-  <section class="p-8 flex flex-row gap-4 justify-center items-center min-h-screen
+  <section class="flex flex-col xl:flex-row gap-4 justify-center items-center min-h-screen
    text-blue-950 dark:text-teal-200 dark:bg-blue-950 bg-teal-200">
-    <div class="h-auto w-[40%]">
+    <div class="h-auto hidden w-[30%] xl:w-[40%] mt-16 xl:m-12 sm:grid place-content-center">
       <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
       <lottie-player 
         src="https://assets2.lottiefiles.com/packages/lf20_S7MPp62oJF.json"
@@ -25,7 +25,7 @@ const { heading = "About Me", showExtra = false } = Astro.props as Props;
         autoplay
       ></lottie-player>
     </div>
-    <div class="flex flex-col justify-center py-10 px-32">
+    <div class="flex flex-col justify-center px-8 sm:px-12 mt-16 sm:mt-0 xl:pr-32 xl:mt-16 pb-8">
       <h1 class="font-bold text-5xl my-8 text-center">{heading}</h1>
       <p class="my-2">Hi there! <strong>I'm Alriya.</strong> I study Computer Science Engineering at St Josepth Engineering College. I'm a fan of Free and Open Source Software, and Web Design.</p>
       <p class="my-2">&emsp;&emsp;I am currently learning some cool new tools like Astro, Svelte, React, and Django. I enjoy participating in hackathons, which are events where people get together to work on creative tech projects. I've been part of some cool ones like HackToFuture and SJEC's Premiere Hackathon (of which I have also been an organiser). I'm comfortable coding in Python, Java, C++, and C, so I can tackle all kinds of programming tasks.</p>

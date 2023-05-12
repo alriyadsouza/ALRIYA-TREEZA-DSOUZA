@@ -25,7 +25,7 @@ const { heading = "Projects", showExtra = false } = Astro.props as Props;
             </div>
           </div>
           <main>
-            <iframe src={url} title={title} width="800vw" height="600vh" allowfullscreen></iframe>
+            <iframe src={url} title={title} width="1000vw" height="750vh" allowfullscreen></iframe>
           </main>
     
   </div>
@@ -44,7 +44,7 @@ const { heading = "Projects", showExtra = false } = Astro.props as Props;
       justify-content: left;
       height: auto;
       background-color: rgb(219, 219, 250);
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 600'%3E%3Cdefs%3E%3Cpattern id='landscape' x='0' y='0' width='1200' height='600' patternUnits='userSpaceOnUse'%3E%3Crect x='0' y='0' width='1200' height='600' fill='rgb(219, 219, 250)' /%3E%3Cpath d='M 0 550 L 0 500 C 70 420 200 300 400 400 C 600 500 800 350 1000 500 L 1200 550 L 1200 600 L 0 600 Z' fill='rgb(79, 121, 66)' /%3E%3C/pattern%3E%3C/defs%3E%3Crect x='0' y='0' width='100%' height='100%' fill='url(%23landscape)' /%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 600'%3E%3Cdefs%3E%3Cpattern id='landscape' x='0' y='0' width='1200' height='600' patternUnits='userSpaceOnUse'%3E%3Crect x='0' y='0' width='1200' height='600' fill='rgb(219, 219, 250)' /%3E%3Cpath d='M 0 550 L 0 500 C 70 420 200 300 400 400 C 600 500 800 350 1000 500 L 1200 550 L 1200 600 L 0 600 Z' fill='rgb(188, 143, 143)' /%3E%3C/pattern%3E%3C/defs%3E%3Crect x='0' y='0' width='100%' height='100%' fill='url(%23landscape)' /%3E%3C/svg%3E");
       background-size: cover;
       background-repeat: repeat;
       background-position: center;
@@ -73,6 +73,11 @@ const { heading = "Projects", showExtra = false } = Astro.props as Props;
       font-weight: bold;
       margin-bottom: 0px;
     }
+
+  .main
+  {
+    margin: 100 auto;
+  }
 
   .hero p {
     font-size: 24px;

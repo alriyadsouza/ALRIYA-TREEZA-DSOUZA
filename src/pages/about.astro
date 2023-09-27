@@ -51,93 +51,91 @@ const { heading = "About Me", showExtra = false } = Astro.props as Props;
     
   </section>
 
-<style>
-  .showcase1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: auto;
-    justify-content: center;
-    height: auto;
-    background-color: rgb(31, 31, 31);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 600'%3E%3Cdefs%3E%3Cpattern id='landscape' x='0' y='0' width='1200' height='600' patternUnits='userSpaceOnUse'%3E%3Crect x='0' y='0' width='1200' height='600' fill='rgb(31, 31, 31)' /%3E%3Cpath d='M 0 550 L 0 500 C 70 420 200 300 400 400 C 600 500 800 350 1000 500 L 1200 550 L 1200 600 L 0 600 Z' fill='rgb(167, 167, 8)' /%3E%3C/pattern%3E%3C/defs%3E%3Crect x='0' y='0' width='100%' height='100%' fill='url(%23landscape)' /%3E%3C/svg%3E");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    padding: 30px;
-    text-align: center;
-    background-position: 0 0;
-    animation: moveBackground 30s linear infinite;
-  }
+  <style>
+    .showcase1 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: rgb(31, 31, 31);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 600'%3E%3Cdefs%3E%3Cpattern id='landscape' x='0' y='0' width='1200' height='600' patternUnits='userSpaceOnUse'%3E%3Crect x='0' y='0' width='1200' height='600' fill='rgb(31, 31, 31)' /%3E%3Cpath d='M 0 550 L 0 500 C 70 420 200 300 400 400 C 600 500 800 350 1000 500 L 1200 550 L 1200 600 L 0 600 Z' fill='rgb(167, 167, 8)' /%3E%3C/pattern%3E%3C/defs%3E%3Crect x='0' y='0' width='100%' height='100%' fill='url(%23landscape)' /%3E%3C/svg%3E");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      padding: 30px;
+      text-align: center;
+      background-position: 0 0;
+      animation: moveBackground 30s linear infinite;
+    }
 
-  @keyframes moveBackground {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 100% 0;
-  }
-}
+    @keyframes moveBackground {
+      from {
+        background-position: 0 0;
+      }
+      to {
+        background-position: 100% 0;
+      }
+    }
 
-  .showcase-text {
-  flex-basis: 90%;
-  max-width: 3000px;
-  color: rgb(0, 0, 0);
-  text-align:justify;
-  margin: 10px auto;
-  animation-fill-mode: forwards;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  background-color: white;
-  font-size: 1.3rem;
-  line-height: 1.18;
-}
+    .showcase-text {
+      flex-basis: 90%;
+      max-width: 100%;
+      color: rgb(0, 0, 0);
+      text-align: justify;
+      margin: 10px auto;
+      animation-fill-mode: forwards;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      background-color: white;
+      font-size: 1.3rem;
+      line-height: 1.18;
+    }
 
-.showcase-text h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
+    .showcase-text h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
 
-.showcase-text h2 {
-  font-size: 1.8rem;
-  margin-top: 40px;
-  margin-bottom: 20px;
-}
+    .showcase-text h2 {
+      font-size: 1.8rem;
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
 
-.showcase-text p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-}
+    .showcase-text p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
 
-.showcase-text ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+    .showcase-text ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
 
-.showcase-text li {
-  margin-bottom: 10px;
-  font-size: 1.2rem;
-  display: flex;
-  align-items: center;
-}
+    .showcase-text li {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+    }
 
-.showcase-text li img {
-  width: 30px;
-  height: 30px;
-  margin-right: 10px;
-}
+    .showcase-text li img {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+    }
 
-  .animation {
-    flex-basis: 50%;
-    display:flex;
+    .animation {
+      flex-basis: 50%;
+      display: flex;
     }
 
     @media (min-width: 768px) {
-    .showcase1 {
-      flex-direction: row;
+      .showcase1 {
+        flex-direction: row;
+      }
     }
-  }
   </style>
 </Layout>

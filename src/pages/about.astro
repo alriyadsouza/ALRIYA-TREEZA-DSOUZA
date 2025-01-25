@@ -5,7 +5,6 @@ import work from "../images/creative-commons-nd-line.png";
 
 export interface Props {
   heading?: string;
-  text?: string;
   showExtra?: boolean;
 }
 
@@ -14,57 +13,66 @@ const { heading = "About Me", showExtra = false } = Astro.props as Props;
 
 <Layout title="About">
   <section class="showcase1">
-    <div class="showcase-text">
-      <h1>{heading}</h1> 
-      <p>Hi there! I'm Alriya studying Computer Science Engineering at SJEC, I'm a fan of FOSS and currently the Secretary of the Sceptix Club. I'm also really into web development and am currently learning some cool new tools like Astro, Svelte, and React.
-        
-        I enjoy participating in hackathons, which are events where people get together to work on creative tech projects. I've been part of some cool ones like HackToFuture and Premiere Hackathon. I'm comfortable coding in Python, Java, C++, and C, so I can tackle all kinds of programming tasks.
-        
-        Overall, I'm a curious and motivated person who's always looking for new challenges. Whether it's organizing events with the Sceptix Club or building websites and apps, I like to push myself and learn new things.</p>
+    <div class="showcase-card">
+      <h1>{heading}</h1>
+      <p class="intro">
+        Hi, I'm <strong>Alriya</strong>, a passionate Computer Science Engineering student at <strong>St. Joseph Engineering College</strong>. I love exploring the latest in web development, contributing to open-source projects, and working with innovative tools like <strong>Astro</strong> and <strong>React</strong>. Here's a bit about my journey so far:
+      </p>
+
+      <div class="section">
+        <h2><img src={school} alt="Education Logo"> Education</h2>
+        <ul>
+          <li>Bachelor of Engineering in Computer Science and Engineering – St. Joseph Engineering College</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2><img src={work} alt="Work Experience Logo"> Work Experience</h2>
+        <ul>
+          <li>Software Development Intern – EGDK India</li>
+        </ul>
+      </div>
+
       {showExtra && (
-        <p>Here's some extra information about me...</p>
+        <div class="section">
+          <h2>More About Me</h2>
+          <p>Here's some extra information about me...</p>
+        </div>
       )}
-      <h2><img src={school} alt="Education Logo" >Education</h2>
-        <ul style="padding: 13px;">Elementary School<ul style="padding: 15px;">G M Vidyaniketan Public School</ul></ul>
-        <ul style="padding: 13px;">Secondary School<ul style="padding: 15px;">S.M.S English Medium school</ul></ul>
-        <ul style="padding: 13px;">Pre-University Course<ul style="padding: 15px;">Little Rock Indian school</ul></ul>
-        <ul style="padding: 13px;">Bachelor of Engineering in Computer Science and Engineering<ul style="padding: 15px;">St Joseph Engineering College</ul></ul>
-      <h2><img src={work} > Hobbies</h2>
-      <ul>
-        <li style="padding: 12px;">Coding <br> Signing <br>Listening To Music <br> Reading Books</li>
-      </ul>
-  </div>
+    </div>
 
     <div class="animation">
       <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
       <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_uEl2RR.json"
         background="transparent"
         speed="1"
-        style="width: 600px; height: 650px;"
+        style="width: 100%; max-width: 600px; height: auto;"
         loop
         autoplay
       ></lottie-player>
     </div>
   </section>
 
-<style>
+  <style>
     .showcase1 {
+      max-width: 1800px;
+      margin: 0 auto;
+      padding: 30px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: left;
+      height: auto;
       background-color: rgb(31, 31, 31);
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 600'%3E%3Cdefs%3E%3Cpattern id='landscape' x='0' y='0' width='1200' height='600' patternUnits='userSpaceOnUse'%3E%3Crect x='0' y='0' width='1200' height='600' fill='rgb(31, 31, 31)' /%3E%3Cpath d='M 0 550 L 0 500 C 70 420 200 300 400 400 C 600 500 800 350 1000 500 L 1200 550 L 1200 600 L 0 600 Z' fill='rgb(167, 167, 8)' /%3E%3C/pattern%3E%3C/defs%3E%3Crect x='0' y='0' width='100%' height='100%' fill='url(%23landscape)' /%3E%3C/svg%3E");
       background-size: cover;
-      background-repeat: no-repeat;
+      background-repeat: repeat;
       background-position: center;
-      padding: 30px;
-      text-align: center;
+      text-align: left;
       background-position: 0 0;
       animation: moveBackground 30s linear infinite;
     }
-
-    @keyframes moveBackground {
+        @keyframes moveBackground {
       from {
         background-position: 0 0;
       }
@@ -73,64 +81,76 @@ const { heading = "About Me", showExtra = false } = Astro.props as Props;
       }
     }
 
-    .showcase-text {
-      flex-basis: 90%;
-      max-width: 100%;
-      color: rgb(0, 0, 0);
-      text-align: justify;
-      margin: 10px auto;
-      animation-fill-mode: forwards;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-      background-color: white;
-      font-size: 1.3rem;
-      line-height: 1.18;
+    .showcase-card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      padding: 25px;
+      width: 90%;
+      max-width: 600px;
+      text-align: left;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .showcase-text h1 {
+    .showcase-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgba(167, 167, 8, 0.6);
+    }
+
+    .showcase-card h1 {
       font-size: 2.5rem;
+      color: rgb(31, 31, 31);
       margin-bottom: 20px;
+      text-align: center;
     }
 
-    .showcase-text h2 {
-      font-size: 1.8rem;
-      margin-top: 40px;
-      margin-bottom: 20px;
-    }
-
-    .showcase-text p {
+    .showcase-card .intro {
       font-size: 1.2rem;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+
+    .showcase-card .section {
       margin-bottom: 20px;
     }
 
-    .showcase-text ul {
+    .showcase-card h2 {
+      font-size: 1.8rem;
+      color: rgb(31, 31, 31);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .showcase-card ul {
       list-style: none;
-      margin: 0;
       padding: 0;
     }
 
-    .showcase-text li {
-      margin-bottom: 10px;
+    .showcase-card li {
       font-size: 1.2rem;
-      display: flex;
-      align-items: center;
-    }
-
-    .showcase-text li img {
-      width: 30px;
-      height: 30px;
-      margin-right: 10px;
+      margin-bottom: 10px;
+      line-height: 1.5;
     }
 
     .animation {
-      flex-basis: 50%;
+      margin-top: 30px;
       display: flex;
+      justify-content: center;
     }
 
     @media (min-width: 768px) {
       .showcase1 {
         flex-direction: row;
+      }
+
+      .showcase-card {
+        margin-right: 20px;
+      }
+
+      .animation {
+        margin-top: 0;
       }
     }
   </style>
